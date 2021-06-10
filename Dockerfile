@@ -2,10 +2,7 @@ FROM yandex/clickhouse-server:20.12
 
 ENV LANG ru_RU.UTF-8
 
-MAINTAINER mail@flexberry.ru
-
-
-ENV TZ=Asia/Yekaterinburg
+ENV TZ=Europe/Kiev
 RUN \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone; \
     apt-get update; \

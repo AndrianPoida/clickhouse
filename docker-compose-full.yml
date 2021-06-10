@@ -2,7 +2,7 @@ version: '3.2'
 
 services:
   clickhouse:
-    image: flexberry/clickhouse-official
+    image: anpojda/clickhouse
     ports:
       - "8123:8123"
       - "19000:9000"
