@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  clickhouse:
+    image: flexberry/clickhouse-official
+    ports:
+      - "8123:8123"
+      - "19000:9000"
+      - "19009:9009"
+    volumes:
+      - clickhousedb:/var/lib/clickhouse
+      - /etc/localtime:/etc/localtime
+    environment:
+      CLICKHOUSECONFIG: ${CLICKHOUSECONFIG}
+      CLICKHOUSEUSERCONFIG: ${CLICKHOUSEUSERCONFIG}
+      PGDatabase: ${PGDatabase}
+      PGServername: ${PGServername}
+      PGUserName: ${PGUserName}
+      PGPassword: ${PGPassword}
+      PGPort: ${PGPort}
+      PGProtocol: ${PGProtocol}
+      PGDicrionaries: ${PGDicrionaries}
+      PGBigTable: ${PGBigTable}
+      
+volumes:
+  clickhousedb:
